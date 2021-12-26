@@ -1,8 +1,3 @@
-/*
-font-family: 'Sora', sans-serif;
-font-family: 'Yellowtail', cursive;
-*/
-
 *{
    margin:0;
    padding:0;
@@ -11,110 +6,159 @@ font-family: 'Yellowtail', cursive;
 }
 
 body{
-   background: url('./images/background.png');
+   background: url('./images/menuback.gif');
    background-size: cover;
    height:100vh;
-   font-size: 1.5rem;
-   font-family: 'Sora', sans-serif;
+   font-family: 'Yellowtail', cursive;
    display: flex;
    align-items: center;
    justify-content: space-around;
+   flex-direction: column;
 }
 
-.board{
-   width: 600px;
-   height:570px;
-   display: flex;
-   flex-wrap: wrap;
-}
-
-.board div{
-   width: 200px;
-   height: 190px;
-   border: 1px solid rgb(146, 146, 146);
-   background: url('./images/fieldbackground.png');
-   background-size: 100%;
-   cursor: pointer;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-.board div i{
-   color:white;
-   
-   font-size: 6rem;
-}
-
-.board div i.fa-times{
-   -webkit-text-stroke: 2px green;
-}
-.board div i.fa-circle{
-   -webkit-text-stroke: 2px red;
-   font-size: 5.5rem;
-}
-
-.board div.disabled{
-   pointer-events: none;
-}
-
-.info{
-   width: 600px;
-   height:570px;
-   position: relative;
-}
-
-.info h2,
-.info h1{
+h1{
    text-align: center;
    padding:.5em 0;
-   border-radius: .5em;
-   font-weight: 100;
+   font-size: 5rem;
+}
+
+button.menuBtn,
+.play{
+   display: block;
+   padding:.7em 0;
+   margin:.5em 0;
+   border-radius: .3em;
    background: #202020;
+   outline: 0;
+   border:2px solid blue;
    color:white;
+   font-size: 2rem;
+   cursor: pointer;font-family: 'Sora', sans-serif;
+   width:300px;
 }
 
-.info h1{
+/* CREDITS MENU */
+
+.credits,
+.options{
+   position: absolute;
+   left:0;
+   top:0;
+   width:100%;
+   height:100%;
+   background: rgba(0,0,0,.5);
    display: none;
-   color:cornflowerblue;
-   font-weight: 400;
 }
 
-.info h1 i{
-   margin:0 .5em;
-}
-
-.info h1 i.far{
-   color:red;
-}
-.info h1 i.fas{
-   color:rgb(0, 190, 0);
-}
-
-.info h2 span{
-   font-weight: 200;
-}
-
-.info button{
+.credits section,
+.options section{
    position: absolute;
    left:50%;
-   top:calc(50% + 20px);
-   transform: translate(-50%, calc(-50% + 20px));
-
-   background:#202020;
-   font-size: 1.2rem;
-   width: 40%;
-   padding:1em 0;
-   border-radius: .4em;
-   border:2px solid cornflowerblue;
-   color: cornflowerblue;
-   font-weight: 700;
-   cursor: pointer;
-   outline: 0;
-   transition: .2s;
-   display: none;
+   top:50%;
+   transition: all .8s;
+   
+   border:2px solid saddlebrown;
+   background: seashell;
+   padding:2em 1em;
+   border-radius: .5em;
+   font-size: 1.3rem;
 }
 
-.info button:hover{
-   background: #101010;
+.credits section a{
+   color:slateblue;
+   text-decoration: none; 
+   transition: .3s;
+}
+.credits section a:hover{
+   text-decoration: underline;
+}
+
+.credits section div{
+   font-size: 2.5rem;
+   margin-top: 1.5em;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.fa-times-circle{
+   position: absolute;
+   right:.5em;
+   top:.5em;
+   color:Red;
+   cursor: pointer;
+}
+
+.credits section div a:nth-child(1):hover{
+   color: rgb(0, 174, 255);
+}
+.credits section div a:nth-child(2):hover{
+   color: rgb(136, 255, 0);
+}
+.credits section div a:nth-child(3):hover{
+   color: rgb(33, 25, 141);
+}
+.credits section div a:nth-child(4):hover{
+   color: rgb(250, 23, 23);
+}
+
+/* OPTIONS MENU */
+
+.options h2{
+   text-align: center;
+   margin-bottom: .5em;
+}
+
+.options div{
+   margin-bottom: 1em;
+}
+
+.options input{
+   padding:.3em;
+   font-size: 1.1rem;
+   outline: 0;
+   border:2px dashed blue;
+   margin:0 .3em;
+}
+
+.options button.defbtn{
+   padding:.2em .5em;
+   outline: 0;
+   border-radius: .2em;
+   border:2px solid black;
+   font-weight: 600;
+   cursor: pointer;
+   background: none;
+   transition: .3s;
+}
+
+.options button.defbtn:hover{
+   background: burlywood;
+}
+
+.options p{
+   font-family: 'Sora',sans-serif;
+   font-size: .8rem;
+}
+
+.options .savebtn{
+   display: block;
+   margin:3em auto 0 auto;
+   width:50%;
+   padding:.5em 0;
+   font-weight: 700;
+   font-size: 1.2rem;
+   outline: 0;
+   border: 2px solid green;
+   cursor: pointer;
+   background: none;
+   transition: .3s;
+   color:green;
+   border-radius: .3em;
+}
+
+.options label{ cursor: pointer; }
+
+.options .savebtn:hover{
+   background: rgb(158, 183, 216);
 }

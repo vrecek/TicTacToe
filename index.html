@@ -4,32 +4,51 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="./index.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-   <title>Document</title>
+   <link rel="stylesheet" href="./index.css">
+   <title>Menu</title>
 </head>
 <body>
-   <section class="board">
-      <div data-col='0' data-row='0'></div>
-      <div data-col='1' data-row='0'></div>
-      <div data-col='2' data-row='0'></div>
-
-      <div data-col='0' data-row='1'></div>
-      <div data-col='1' data-row='1'></div>
-      <div data-col='2' data-row='1'></div>
-
-      <div data-col='0' data-row='2'></div>
-      <div data-col='1' data-row='2'></div>
-      <div data-col='2' data-row='2'></div>
+   <h1>TIC TAC TOE</h1>
+   <section>
+      <button class="play">Play game</button>
+      <button class="menuBtn">Options</button>
+      <button class="menuBtn">Credits</button>
    </section>
 
-   <section class="info">
-      <h1></h1>
-      <h2> <span></span> TURN</h2>
-      <button>RESTART</button>
-   </section>
+   <article class="credits">
+      <section>
+         <i class="far fa-times-circle"></i>
+         <h3>Free music used: <a target="_blank" href='https://www.youtube.com/watch?v=GQe7YHqGe8c'>Epic Inspiring Dramatic Cinematic Emotional Background</a></h3>
+         <div>
+            <a href='/'> <i class="fab fa-linkedin-in"></i> </a>
+            <a href='/'> <i class="fab fa-google"></i> </a>
+            <a href='https://github.com/vrecek'> <i class="fab fa-github"></i> </a>
+            <a href='/'> <i class="fab fa-youtube"></i> </a>
+         </div>
+      </section>
+   </article>
+
+   <article class="options">
+      <section>
+         <i class="far fa-times-circle"></i>
+         <h2>Change name</h2>
+         <div>
+            <span>For <span style="color:red">Circle:</span></span> <input type='text' /> <button class="defbtn">Default</button>
+            <p>actual: Circle</p>
+         </div>
+         <div>
+            <span>For <span style='color: green'>Cross:</span> </span> <input type='text' /> <button class="defbtn">Default</button>
+            <p>actual: Cross</p>
+         </div>
+         <div>
+            <label for='check'>Save scores to localstorage:</label> <input id="check" type='checkbox' />
+         </div>
+         <button class="savebtn">SAVE</button>
+      </section>
+   </article>
 
 <script src="./index.js"></script>
 </body>
