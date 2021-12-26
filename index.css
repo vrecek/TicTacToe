@@ -1,0 +1,120 @@
+/*
+font-family: 'Sora', sans-serif;
+font-family: 'Yellowtail', cursive;
+*/
+
+*{
+   margin:0;
+   padding:0;
+   box-sizing: border-box;
+   font-weight: 300;
+}
+
+body{
+   background: url('./images/background.png');
+   background-size: cover;
+   height:100vh;
+   font-size: 1.5rem;
+   font-family: 'Sora', sans-serif;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+
+.board{
+   width: 600px;
+   height:570px;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.board div{
+   width: 200px;
+   height: 190px;
+   border: 1px solid rgb(146, 146, 146);
+   background: url('./images/fieldbackground.png');
+   background-size: 100%;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.board div i{
+   color:white;
+   
+   font-size: 6rem;
+}
+
+.board div i.fa-times{
+   -webkit-text-stroke: 2px green;
+}
+.board div i.fa-circle{
+   -webkit-text-stroke: 2px red;
+   font-size: 5.5rem;
+}
+
+.board div.disabled{
+   pointer-events: none;
+}
+
+.info{
+   width: 600px;
+   height:570px;
+   position: relative;
+}
+
+.info h2,
+.info h1{
+   text-align: center;
+   padding:.5em 0;
+   border-radius: .5em;
+   font-weight: 100;
+   background: #202020;
+   color:white;
+}
+
+.info h1{
+   display: none;
+   color:cornflowerblue;
+   font-weight: 400;
+}
+
+.info h1 i{
+   margin:0 .5em;
+}
+
+.info h1 i.far{
+   color:red;
+}
+.info h1 i.fas{
+   color:rgb(0, 190, 0);
+}
+
+.info h2 span{
+   font-weight: 200;
+}
+
+.info button{
+   position: absolute;
+   left:50%;
+   top:calc(50% + 20px);
+   transform: translate(-50%, calc(-50% + 20px));
+
+   background:#202020;
+   font-size: 1.2rem;
+   width: 40%;
+   padding:1em 0;
+   border-radius: .4em;
+   border:2px solid cornflowerblue;
+   color: cornflowerblue;
+   font-weight: 700;
+   cursor: pointer;
+   outline: 0;
+   transition: .2s;
+   display: none;
+}
+
+.info button:hover{
+   background: #101010;
+}
