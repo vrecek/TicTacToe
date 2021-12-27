@@ -1,3 +1,28 @@
+const crossp = document.querySelector('.crossp');
+const circlep = document.querySelector('.circlep');
+const check = document.querySelector('#check');
+const resetBtn = document.querySelector('.resetStorage');
+
+let crossPlayer = JSON.parse(localStorage.getItem('crossPlr'));
+if(!crossPlayer) crossPlayer = 'Cross';
+
+let circlePlayer = JSON.parse(localStorage.getItem('circlePlr'));
+if(!circlePlayer) circlePlayer = 'Circle';
+
+let checkValue = JSON.parse(localStorage.getItem('save'));
+if(!checkValue){
+   checkValue = false;
+   resetBtn.style.display = 'none';
+}else resetBtn.style.display = 'block';
+
+crossp.textContent = crossPlayer;
+circlep.textContent = circlePlayer;
+check.checked = checkValue;
+
+check.addEventListener('click', e => {
+   e.target.checked ? resetBtn.style.display = 'block' : resetBtn.style.display = 'none';
+})
+
 /**
  * START GAME
 */
@@ -22,6 +47,61 @@ document.querySelectorAll('.menuBtn').forEach((item, ind) => {
 /**
  * OPTIONS
 */
+const circleInp = document.querySelector('.oname');
+const crossInp = document.querySelector('.xname');
+
+document.querySelector('.savebtn').addEventListener('click', saveChanges);
+
+function saveChanges(){
+   let crossPl = JSON.parse(localStorage.getItem('crossPlr'));
+   if(!crossPl) crossPl = 'Cross';
+   let circlePl = JSON.parse(localStorage.getItem('circlePlr'));
+   if(!circlePl) circlePl = 'Circle';
+   let checkVal = JSON.parse(localStorage.getItem('save'));
+   if(!checkVal) checkVal = false;
+
+
+   if(circleInp.value !== '' && circleInp.value !== circlePl){
+      localStorage.setItem('circlePlr', JSON.stringify(circleInp.value));
+      circlep.textContent = circleInp.value;
+      circleInp.value = ''
+   }
+
+   if(crossInp.value !== '' && crossInp.value !== crossPl){
+      localStorage.setItem('crossPlr', JSON.stringify(crossInp.value));
+      crossp.textContent = crossInp.value;
+      crossInp.value = '';
+   }
+
+   if(check.checked !== checkVal){
+      localStorage.setItem('save', JSON.stringify(check.checked));
+   }
+}
+
+resetBtn.addEventListener('click', () => {
+   localStorage.setItem('CircleScore', JSON.stringify(0));
+   localStorage.setItem('CrossScore', JSON.stringify(0));
+})
+
+//////////
+
+document.querySelectorAll('.defbtn').forEach((item, ind) => {
+   item.addEventListener('click', () => defaultChanges(ind))
+});
+
+function defaultChanges(nr){
+   switch(nr){
+      case 0:
+         localStorage.removeItem('circlePlr');
+         circlep.textContent = 'Circle';
+      break;
+
+      case 1:
+         localStorage.removeItem('crossPlr');
+         crossp.textContent = 'Cross';
+      break;
+   }
+}
 
 /**
  * CLOSE POPUP MENU

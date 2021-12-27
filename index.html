@@ -18,6 +18,7 @@
       <button class="menuBtn">Credits</button>
    </section>
 
+   <!-- CREDITS MENU -->
    <article class="credits">
       <section>
          <i class="far fa-times-circle"></i>
@@ -31,20 +32,22 @@
       </section>
    </article>
 
+   <!-- OPTIONS MENU -->
    <article class="options">
       <section>
          <i class="far fa-times-circle"></i>
          <h2>Change name</h2>
          <div>
-            <span>For <span style="color:red">Circle:</span></span> <input type='text' /> <button class="defbtn">Default</button>
-            <p>actual: Circle</p>
+            <span>For <span style="color:red">Circle:</span></span> <input class="oname" type='text' /> <button class="defbtn">Default</button>
+            <p>actual: <span class="circlep"></span></p>
          </div>
          <div>
-            <span>For <span style='color: green'>Cross:</span> </span> <input type='text' /> <button class="defbtn">Default</button>
-            <p>actual: Cross</p>
+            <span>For <span style='color: green'>Cross:</span> </span> <input class="xname" type='text' /> <button class="defbtn">Default</button>
+            <p>actual: <span class="crossp"></span></p>
          </div>
          <div>
             <label for='check'>Save scores to localstorage:</label> <input id="check" type='checkbox' />
+            <button class="resetStorage">Reset score</button>
          </div>
          <button class="savebtn">SAVE</button>
       </section>

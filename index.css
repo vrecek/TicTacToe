@@ -162,3 +162,19 @@ button.menuBtn,
 .options .savebtn:hover{
    background: rgb(158, 183, 216);
 }
+
+.resetStorage{
+   width:30%;
+   padding:.5em 0;
+   background: none;
+   border-radius: .2em;
+   border:2px solid #303030;
+   color: #303030;
+   font-weight: 700;
+   cursor: pointer;
+   transition: .2s;
+}
+
+.resetStorage:hover{
+   background: #707070;
+}
