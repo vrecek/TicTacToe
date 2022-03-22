@@ -14,12 +14,13 @@ body{
    align-items: center;
    justify-content: space-around;
    flex-direction: column;
+   overflow: hidden;
 }
 
 h1{
    text-align: center;
    padding:.5em 0;
-   font-size: 5rem;
+   font-size: clamp(2.5rem, 10vw, 5rem);
 }
 
 button.menuBtn,
@@ -32,9 +33,9 @@ button.menuBtn,
    outline: 0;
    border:2px solid blue;
    color:white;
-   font-size: 2rem;
+   font-size: clamp(1.5rem, 7vw, 2rem);
    cursor: pointer;font-family: 'Sora', sans-serif;
-   width:300px;
+   width:clamp(220px, 50vw, 300px);
 }
 
 /* CREDITS MENU */
